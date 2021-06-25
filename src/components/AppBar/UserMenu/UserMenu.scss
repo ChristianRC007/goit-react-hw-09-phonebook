@@ -1,0 +1,31 @@
+.user-menu-box {
+  display: flex;
+  align-items: center;
+}
+
+.user-email {
+  margin-right: 25px;
+
+  font-size: 20px;
+  color: white;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+
+  background-color: transparent;
+  fill: white;
+  border: none;
+  transition: fill 200ms linear;
+
+  &:hover {
+    fill: #1269ff;
+    cursor: pointer;
+  }
+
+  & > svg {
+    width: 25px;
+    height: 25px;
+  }
+}

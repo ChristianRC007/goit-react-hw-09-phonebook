@@ -1,0 +1,51 @@
+@import '../ContactForm/ContactForm.scss';
+
+.filter {
+ display: inline-flex;
+
+ margin-top: 100px;
+ margin-left: 100px;
+ padding: 10px 0;
+
+  &__input {
+    margin-right: 50px;
+    width: 650px;
+
+    font-size: 18px;
+  
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    transition: border-bottom 200ms linear;
+  
+    &::placeholder {
+      color: white;
+    }
+  
+    &:focus,
+    &:hover {
+      outline: none;
+      border-bottom: 1px solid #1269ff;
+
+      & + span {
+        border-bottom: 1px solid #1269ff;
+      }
+    }
+  }
+
+  & > span {
+  border-bottom: 1px solid transparent;
+
+  transition: border 200ms linear;
+  cursor: pointer;
+  }
+
+  & > span > svg {
+    width: 25px;
+    height: 25px;
+
+    fill: white;
+  }
+}
+

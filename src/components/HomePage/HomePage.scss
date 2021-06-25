@@ -1,0 +1,41 @@
+.title {
+  margin-top: 250px;
+  margin-bottom: 0;
+
+  font-size: 70px;
+  font-weight: 700;
+  color: white;
+  text-align: left;
+
+  &__word {
+    border-bottom: 3px solid #1269ff;
+    // color: #1269ff;
+  }
+
+  &__text {
+    margin-top: 10px;
+    max-width: 480px;
+
+    font-size: 40px;
+    font-weight: 300;
+    color: white;
+    text-align: left;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 300px;
+    padding-bottom: 5px;
+
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: border 250ms linear;
+
+    &:hover {
+      border-bottom: 3px solid #1269ff;
+    }
+  }
+}

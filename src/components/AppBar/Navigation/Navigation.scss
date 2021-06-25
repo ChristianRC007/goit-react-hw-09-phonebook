@@ -1,0 +1,19 @@
+.nav__link {
+  margin-right: 30px;
+
+  font-size: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: border 200ms linear;
+
+  &:hover {
+    border-bottom: 3px solid #1269ff;
+  }
+
+  &--active {
+    border-bottom: 3px solid #1269ff;
+  }
+}

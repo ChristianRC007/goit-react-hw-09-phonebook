@@ -1,0 +1,69 @@
+@import '../ContactForm/ContactForm.scss';
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+
+  margin: 100px 0 0 50px;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+    width: 450px;
+
+    & p {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: 5px;
+
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      border-bottom: 1px solid white;
+    }
+
+    &__name {
+      flex-grow: 1;
+    }
+    &__number {
+      margin-right: 30px;
+    }
+  }
+
+  &__item button {
+    display: flex;
+
+    padding: 5px;
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover svg {
+      fill: red;
+    }
+
+    &:active {
+      transform: scale(0.7);
+    }
+
+    & svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+      transition: fill 200ms linear;
+    }
+  }
+}
+
+.contact__loader {
+  position: absolute;
+  top: 185px;
+  left: 550px;
+}

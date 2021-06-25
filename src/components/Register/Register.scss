@@ -1,0 +1,12 @@
+@import '../Login/Login.scss';
+
+.register-form {
+  @extend .login-form;
+}
+.register-input {
+  @extend .login-input;
+}
+.register-btn {
+  @extend .login-btn;
+  width: 72px;
+}
