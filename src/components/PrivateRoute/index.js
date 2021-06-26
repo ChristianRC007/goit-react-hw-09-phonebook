@@ -1,1 +1,1 @@
-export { default } from './PrivateRoute.container';
+export { default } from './PrivateRoute';

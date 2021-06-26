@@ -2,7 +2,7 @@ import Container from '../Container';
 
 import './HomePage.scss';
 
-function HomePage() {
+export default function HomePage() {
   return (
     <Container>
       <h1 className="title">The PhoneBook</h1>
@@ -16,5 +16,3 @@ function HomePage() {
     </Container>
   );
 }
-
-export default HomePage;

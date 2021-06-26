@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types';
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { authSelectors, authOperations } from '../../../redux/auth';
 
 import './UserMenu.scss';
 
-function UserMenu({ email, onLogout }) {
+export default function UserMenu() {
+  const dispatch = useDispatch();
+  const email = useSelector(authSelectors.getUserEmail);
+  const onLogout = useCallback(() => {
+    dispatch(authOperations.logOut());
+  }, [dispatch]);
+
   return (
     <div className="user-menu-box">
       <span className="user-email">{email}</span>
@@ -48,10 +56,3 @@ function UserMenu({ email, onLogout }) {
     </div>
   );
 }
-
-UserMenu.propTypes = {
-  email: PropTypes.string.isRequired,
-  onLogout: PropTypes.func.isRequired,
-};
-
-export default UserMenu;

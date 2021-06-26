@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import './AuthNav.scss';
 
-function AuthNav() {
+export default function AuthNav() {
   return (
     <div>
       <NavLink
@@ -24,5 +24,3 @@ function AuthNav() {
     </div>
   );
 }
-
-export default AuthNav;

@@ -3,7 +3,7 @@ import ContactList from './ContactList';
 import Filter from './Filter';
 import Container from '../Container';
 
-function Contacts() {
+export default function Contacts() {
   return (
     <Container>
       <ContactForm />
@@ -12,5 +12,3 @@ function Contacts() {
     </Container>
   );
 }
-
-export default Contacts;

@@ -1,8 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { authSelectors } from '../../../redux/auth';
+
 import './Navigation.scss';
 
-function Navigation({ isAuthenticated }) {
+export default function Navigation() {
+  const isAuthenticated = useSelector(authSelectors.getIsAuthenticated);
+
   return (
     <nav>
       <NavLink
@@ -26,9 +30,3 @@ function Navigation({ isAuthenticated }) {
     </nav>
   );
 }
-
-Navigation.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-};
-
-export default Navigation;

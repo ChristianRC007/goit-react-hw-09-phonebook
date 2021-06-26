@@ -1,17 +1,13 @@
 import { Redirect, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { authSelectors } from '../../redux/auth';
 
-const PrivateRoute = ({
-  component: Component,
-  isAuthenticated,
-  redirectTo,
-  ...routeProps
-}) => (
-  <Route
-    {...routeProps}
-    render={props =>
-      isAuthenticated ? <Component {...props} /> : <Redirect to={redirectTo} />
-    }
-  />
-);
+export default function PrivateRoute({ children, redirectTo, ...routeProps }) {
+  const isAuthenticated = useSelector(authSelectors.getIsAuthenticated);
 
-export default PrivateRoute;
+  return (
+    <Route {...routeProps}>
+      {isAuthenticated ? children : <Redirect to={redirectTo} />}
+    </Route>
+  );
+}

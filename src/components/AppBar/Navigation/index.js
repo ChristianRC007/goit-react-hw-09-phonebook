@@ -1,1 +1,1 @@
-export { default } from './Navigation.container';
+export { default } from './Navigation';
