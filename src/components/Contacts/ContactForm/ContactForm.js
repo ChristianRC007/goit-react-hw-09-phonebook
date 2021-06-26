@@ -37,10 +37,10 @@ export default function ContactForm() {
       setName('');
       setNumber('');
       setIsExist(true);
-      const timer = setTimeout(() => {
+      const timer1 = setTimeout(() => {
         setIsExist(false);
       }, 3000);
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer1);
     }
     dispatch(
       phonebookOperations.addContact({
@@ -85,7 +85,9 @@ export default function ContactForm() {
           Add contact
         </button>
       </form>
-      {isExist && <Notification>This contact is already exist!</Notification>}
+      <div className="notification-wrapper">
+        {isExist && <Notification>This contact is already exist!</Notification>}
+      </div>
     </>
   );
 }

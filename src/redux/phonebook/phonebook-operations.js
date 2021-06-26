@@ -18,9 +18,20 @@ const addContact = createAsyncThunk(
   },
 );
 
+const editContact = createAsyncThunk(
+  'phonebook/editContact',
+  async ({ id, name, number }) => {
+    const contact = { name, number };
+
+    const { data } = await axios.patch(`/contacts/${id}`, contact);
+
+    return data;
+  },
+);
+
 const deleteContact = createAsyncThunk('phonebook/deleteContact', async id => {
   await axios.delete(`/contacts/${id}`);
 });
 
 // eslint-disable-next-line
-export default { getContacts, addContact, deleteContact };
+export default { getContacts, addContact, deleteContact, editContact };

@@ -8,6 +8,10 @@ const contacts = createReducer([], {
     ...state,
     payload,
   ],
+  [phonebookOperations.editContact.fulfilled]: (state, { payload }) => [
+    ...state.filter(({ id }) => id !== payload.id),
+    payload,
+  ],
   [phonebookOperations.deleteContact.fulfilled]: (state, { meta }) =>
     state.filter(({ id }) => id !== meta.arg),
 });
@@ -26,17 +30,29 @@ const loading = createReducer(false, {
   [phonebookOperations.deleteContact.pending]: () => true,
   [phonebookOperations.deleteContact.fulfilled]: () => false,
   [phonebookOperations.deleteContact.rejected]: () => false,
+  [phonebookOperations.editContact.pending]: () => true,
+  [phonebookOperations.editContact.fulfilled]: () => false,
+  [phonebookOperations.editContact.rejected]: () => false,
 });
+
+const editor = createReducer(
+  {},
+  {
+    [phonebookActions.toggleEditor]: (_, { payload }) => payload,
+  },
+);
 
 const error = createReducer(null, {
   [phonebookOperations.getContacts.rejected]: (_, { error }) => error.message,
   [phonebookOperations.addContact.rejected]: (_, { error }) => error.message,
   [phonebookOperations.deleteContact.rejected]: (_, { error }) => error.message,
+  [phonebookOperations.editContact.rejected]: (_, { error }) => error.message,
 });
 
 export default combineReducers({
   contacts,
   filter,
   loading,
+  editor,
   error,
 });

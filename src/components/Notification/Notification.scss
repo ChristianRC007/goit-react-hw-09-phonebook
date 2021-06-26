@@ -1,8 +1,10 @@
-.notification {
+.notification-wrapper {
   position: absolute;
   top: -20%;
   left: 40%;
+}
 
+.notification {
   color: red;
   font-style: italic;
   font-size: 20px;
